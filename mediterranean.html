@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>mediterranean — yws picks</title>
+
+  <style>
+    /* Page */
+    html, body { margin:0; padding:0; }
+    body {
+      background:#cdb891;
+      color:#3d251e;
+      font-family:"Courier New", Courier, monospace;
+    }
+    .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
+
+    /* Back arrow */
+    .back-arrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:40px; color:#3d251e; text-decoration:none;
+      margin-bottom:20px; transition:opacity .2s, transform .2s;
+    }
+    .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
+
+    /* Header */
+    h1{ margin:0; font-size:40px; font-weight:700; }
+    .note{ margin-top:10px; font-size:20px; opacity:.9; }
+    .intro{ margin:5px 0 40px; font-size:20px; opacity:.9; }
+
+    /* Card layout */
+    .card{
+      position:relative;
+      display:grid;
+      grid-template-columns:360px 1fr;
+      grid-template-areas:"photo content";
+      align-items:stretch;
+      gap:20px;
+      background:#FFF8E7;
+      border-radius:17px;
+      padding:20px;
+      margin-bottom:60px;
+      overflow:hidden;
+    }
+
+    /* Photo */
+    .photo{
+      grid-area:photo;
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+
+    /* RESY button */
+    .resy-btn{
+      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      cursor:pointer; transition:transform .2s;
+    }
+    .resy-btn:hover{ transform:scale(1.05); }
+
+    /* Content layout */
+    .content{
+      grid-area:content;
+      display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
+      min-height:0;
+    }
+
+    /* Title + hover map pin */
+    .title {
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 6px;
+      color:#3d251e;
+    }
+    .title a {
+      color:#3d251e;
+      text-decoration:none;
+      position:relative;
+      transition:opacity .2s ease;
+    }
+    .title a::after {
+      content:"📍";
+      opacity:0;
+      margin-left:6px;
+      transition:opacity .3s ease, transform .3s ease;
+      transform:translateY(-2px);
+    }
+    .title a:hover {
+      opacity:.85;
+    }
+    .title a:hover::after {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Text */
+    .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; color:#3d251e; }
+    .menu{ margin:4px 0 10px; padding:0; list-style:none; font-size:16px; color:#3d251e; }
+    .menu li{ margin:4px 0; }
+    .review{ font-size:16px; line-height:1.3; color:#3d251e; margin-top:2px; }
+    .rate{ margin-top:8px; font-size:16px; color:#3d251e; }
+
+    /* Mobile */
+    @media (max-width:700px){
+      .card{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "photo"
+          "content";
+        height:auto !important;
+      }
+      .photo{ height:240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <a href="harmonic collection.html" class="back-arrow" aria-label="back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <h1>mediterranean</h1>
+    <p class="note">*reminder that all the ratings and suggestions are based on my taste*</p>
+    <p class="intro">
+      The Mediterranean is one of my favorite cuisines. I love hummus with pita bread and falafel. The good thing about Mediterranean food is how it's somewhat healthy but it is very fulfilling. I love the soft pita bread with the variety of dips.
+    </p>
+
+    <!-- Card 1 -->
+    <article class="card card--h360">
+      <a href="https://resy.com/cities/new-york-ny/venues/12-chairs-soho?date=2025-11-10&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/12chair1.JPG" alt="12 chair cafe">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/7vGvBP7qENtmsw8y8" target="_blank" rel="noopener">12 chair cafe</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🧆 falafel hummus (with pita)</li>
+            <li>🫜 small plates: labneh, tabouli salad</li>
+            <li>🍗 chicken schnitzel</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            The bread was incredibly soft — it felt like it came straight out of the oven. The hummus paired perfectly with the falafel, which was crispy on the outside and tender on the inside. The labneh dip was delicious, and the salad added a nice refreshing balance to the meal. The chicken schnitzel was one of the best I’ve had — tender and juicy with a thin, perfectly crisp coating, served with creamy mashed potatoes on the side. The place was lively and packed, which made it a bit hard to talk, but the energy and great food made the experience really enjoyable.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.6/10</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card card--h380">
+      <a href="https://resy.com/cities/new-york-ny/venues/kfar-brooklyn?date=2025-11-10&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/kfar1.jpg" alt="kfar">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/vXCLWS2oUxHc2mkX8" target="_blank" rel="noopener">K'Far</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍄‍🟫 mushroom hummus (with pita)</li>
+            <li>🥩 hanger steak</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            Their mushroom hummus was incredible — the hummus itself was mild yet savory, and the mushrooms complemented it perfectly. The pita bread was some of the softest I’ve ever had, which made it even better. The hanger steak was juicy with a nicely crisp exterior, and the cooked vegetables were sweet and flavorful. The overall vibe of the place felt both trendy and welcoming, making the whole experience warm and memorable.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.4/10</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card card--h420">
+      <a href="https://resy.com/cities/new-york-ny/venues/leonetta-nyc?date=2025-11-10&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/leonetta.JPG" alt="leonetta">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/gRXsztcF9v3NBHYQ6" target="_blank" rel="noopener">Leonetta</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍝 black truffle mafaldine</li>
+            <li>🧄 black garlic hummus</li>
+            <li>🐙 octopus</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            The truffle pasta was one of the best I’ve had — the sauce was creamy and rich with the right hint of truffle, though I wish the flavor were a bit stronger. The pasta was cooked perfectly al dente, but the dish was on the pricier side. The black garlic hummus was tasty, though the portion felt too small, and while the bread was good, I’ve had better elsewhere. The octopus was tender and juicy, rounding out the meal nicely.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.1/10</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

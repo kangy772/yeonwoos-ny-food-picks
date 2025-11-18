@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>thai — yws picks</title>
+
+  <style>
+    /* Page */
+    html, body { margin:0; padding:0; }
+    body {
+      background:#FFA341;            /* background */
+      color:#30550D;                 /* font */
+      font-family:"Courier New", Courier, monospace;
+    }
+    .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
+
+    /* Back (inline SVG) */
+    .back-arrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:40px; color:#30550D; text-decoration:none;
+      margin-bottom:20px; transition:opacity .2s, transform .2s;
+    }
+    .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
+
+    /* Header */
+    h1{ margin:0; font-size:40px; font-weight:700; }
+    .note{ margin-top:10px; font-size:20px; opacity:.9; }
+    .intro{ margin:5px 0 40px; font-size:20px; opacity:.9; }
+
+    /* Card layout */
+    .card{
+      position:relative;
+      display:grid;
+      grid-template-columns:360px 1fr;      /* image | content */
+      grid-template-areas:"photo content";
+      align-items:stretch;
+      gap:20px;
+      background:#FABB77;                  /* card color */
+      border-radius:17px;
+      padding:20px;
+      margin-bottom:60px;
+      overflow:hidden;
+    }
+
+    /* Photo column */
+    .photo{
+      grid-area:photo;
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+
+    /* RESY image button */
+    .resy-btn{
+      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      cursor:pointer; transition:transform .2s;
+    }
+    .resy-btn:hover{ transform:scale(1.05); }
+
+    /* Content column */
+    .content{
+      grid-area:content;
+      display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
+      min-height:0;
+    }
+
+    /* Clickable title + hover pin */
+    .title{
+      font-size:22px; font-weight:700; margin:0 0 6px;
+    }
+    .title a{
+      color:inherit; text-decoration:none; position:relative; transition:opacity .2s ease;
+    }
+    .title a::after{
+      content:"📍"; opacity:0; margin-left:6px;
+      transition:opacity .3s ease, transform .3s ease; transform:translateY(-2px);
+    }
+    .title a:hover{ opacity:.85; }
+    .title a:hover::after{ opacity:1; transform:translateY(0); }
+
+    .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; }
+    .menu{ margin:4px 0 10px; padding:0; list-style:none; font-size:16px; }
+    .menu li{ margin:4px 0; }
+    .review{ font-size:16px; line-height:1.3; color:#30550D; margin-top:2px; }
+    .rate{ margin-top:8px; font-size:16px; }
+
+    /* Mobile */
+    @media (max-width:700px){
+      .card{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "photo"
+          "content";
+        height:auto !important;
+      }
+      .photo{ height:240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <!-- Back to main selection page -->
+    <a href="harmonic collection.html" class="back-arrow" aria-label="back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <!-- Header -->
+    <h1>thai</h1>
+    <p class="note">*reminder that all the ratings and suggestions are based on my taste*</p>
+    <p class="intro">
+      thai is one of my favorite cuisines! new york has some of the best thai spots! My staple order is either a pad thai or a pad see ew both with chicken but these days i like pad see ew more.
+    </p>
+
+    <!-- Card 1 -->
+    <article class="card card--h360">
+      <a href="https://resy.com/cities/new-york-ny/venues/bangkok-supper-club?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+
+      <div class="photo">
+        <img src="images/bangkok1.JPG" alt="bangkok supper club">
+      </div>
+
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/vWiheTwQfQvaUXzs5" target="_blank" rel="noopener">bangkok supper club</a>
+        </h2>
+
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍚 pork jowl</li>
+            <li>🦪 hokkaido scallop ceviche</li>
+          </ul>
+        </div>
+
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            this felt like modern thai with finesse. the pork jowl was juicy-crispy (crackly outside, soft inside) and not oily; the garlicky rice was memorable, if a touch heavy on garlic. the scallop ceviche was refreshing—watermelon sweetness + mint lift. next time i’m eyeing the sea bass curry and octopus.
+          </p>
+        </div>
+
+        <div class="rate">⭐ rate: 9.8/10</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card card--h420">
+      <a href="https://www.opentable.com/r/soothr-new-york" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+
+      <div class="photo">
+        <img src="images/soothr.jpeg" alt="soothr">
+      </div>
+
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/vA7UxgtemWEVhEkP6" target="_blank" rel="noopener">soothr</a>
+        </h2>
+
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍚 crab fried rice</li>
+            <li>🥘 tom yum seafood hotpot</li>
+            <li>🍜 shrimp pad thai</li>
+            <li>🍖 si-krong pad ped (pork rib)</li>
+          </ul>
+        </div>
+
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            the pork rib was standout—tender and bold. crab fried rice was soft and fragrant; pad thai had great noodle texture and balance. tom yum was enjoyable even for me (not usually a tom-yum person). can’t wait to try the khao soi and duck noodles. lively vibe; book ahead—michelin-guide darling.
+          </p>
+        </div>
+
+        <div class="rate">⭐ rate: 9.5/10</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card card--h380">
+      <a href="https://www.opentable.com/r/pranakhon-new-york" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+
+      <div class="photo">
+        <img src="images/pranakhon.jpg" alt="pranakhon">
+      </div>
+
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/6bzW465MEYtHvc687" target="_blank" rel="noopener">pranakhon</a>
+        </h2>
+
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍜 pad thai</li>
+            <li>🍚 crab fried rice</li>
+            <li>🍲 yuea phai soup</li>
+          </ul>
+        </div>
+
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            favorite was the pad thai—great balance and noodle bite. fried rice was soft and aromatic (slightly salty). yue phai soup was rich and soothing, almost pho-like. warm, lively space; easier reservations than many michelin-listed spots. next time: curry pancake and short rib mussaman.
+          </p>
+        </div>
+
+        <div class="rate">⭐ rate: 9.3/10</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

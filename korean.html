@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>korean — yws picks</title>
+
+  <style>
+    /* Page */
+    html, body { margin:0; padding:0; }
+    body {
+      background:#E3DFD2;
+      color:#000000;
+      font-family:"Courier New", Courier, monospace;
+    }
+    .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
+
+    /* Back arrow */
+    .back-arrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:40px; color:#050707; text-decoration:none;
+      margin-bottom:20px; transition:opacity .2s, transform .2s;
+    }
+    .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
+
+    /* Header */
+    h1{ margin:0; font-size:40px; font-weight:700; }
+    .note{ margin-top:10px; font-size:20px; opacity:.9; }
+    .intro{ margin:5px 0 40px; font-size:20px; opacity:.9; }
+
+    /* Card layout */
+    .card{
+      position:relative;
+      display:grid;
+      grid-template-columns:360px 1fr;
+      grid-template-areas:"photo content";
+      align-items:stretch;
+      gap:20px;
+      background:#A80D0A;
+      border-radius:17px;
+      padding:20px;
+      margin-bottom:60px;
+      overflow:hidden;
+    }
+
+    /* Photo */
+    .photo{
+      grid-area:photo;
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+
+    /* RESY button */
+    .resy-btn{
+      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      cursor:pointer; transition:transform .2s;
+    }
+    .resy-btn:hover{ transform:scale(1.05); }
+
+    /* Content layout */
+    .content{
+      grid-area:content;
+      display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
+      min-height:0;
+    }
+
+    /* Title + hover map pin */
+    .title {
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 6px;
+      color:#F4F4F4;
+    }
+    .title a {
+      color:#F4F4F4;
+      text-decoration:none;
+      position:relative;
+      transition:opacity .2s ease;
+    }
+    .title a::after {
+      content:"📍";
+      opacity:0;
+      margin-left:6px;
+      transition:opacity .3s ease, transform .3s ease;
+      transform:translateY(-2px);
+    }
+    .title a:hover {
+      opacity:.85;
+    }
+    .title a:hover::after {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Text */
+    .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; color:#F4F4F4; }
+    .menu{ margin:4px 0 10px; padding:0; list-style:none; font-size:16px; color:#F4F4F4; }
+    .menu li{ margin:4px 0; }
+    .review{ font-size:16px; line-height:1.3; color:#F4F4F4; margin-top:2px; }
+    .rate{ margin-top:8px; font-size:16px; color:#F4F4F4; }
+
+    /* Mobile */
+    @media (max-width:700px){
+      .card{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "photo"
+          "content";
+        height:auto !important;
+      }
+      .photo{ height:240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <a href="harmonic collection.html" class="back-arrow" aria-label="back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <h1>korean</h1>
+    <p class="note">*reminder that all the ratings and suggestions are based on my taste*</p>
+    <p class="intro">
+      as a korean i love korean food! sometimes korean foods are really sweet in newyork compared to local food back in korea but its still good here in new york too! most restaurants elevate the local food in korea in a more modern way. i wil be recommending some of my favorite restaurants that arent the traditional way but still i think alot of foreigners will love!
+    </p>
+
+    <!-- Card 1 -->
+    <article class="card card--h360">
+      <a href="https://resy.com/cities/new-york-ny/venues/nubiani?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/nubiani1.JPG" alt="nubiani">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/f64e8ETvALPY81pK8" target="_blank" rel="noopener">nubiani</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥩 beef large package</li>
+            <li>🍲 soybean paste stew</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            As a Korean, I can firmly say this is the best kbbq in New York. Every cut of meat was incredible—tender, flavorful, and melting in your mouth without being too fatty or oily. The set package includes a variety of premium meats along with an impressive selection of banchan and a perfectly cooked steamed egg that’s soft, bouncy, and melts the moment you taste it. The soybean paste stew was rich and deeply comforting, with just the right balance of saltiness. They serve a house soft-serve ice cream—light, creamy, and the perfect way to end the meal. For the quality and variety offered, Nubiani is an amazing value. The vibe is modern yet luxurious, with a clean, upscale atmosphere that still feels warm and welcoming.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 10/10</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card card--h380">
+      <a href="https://resy.com/cities/new-york-ny/venues/moono?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/moono.jpg" alt="moono">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/9nwYbNRXP2DdPaGX9" target="_blank" rel="noopener">moono</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍚 uni soktbap</li>
+            <li>🥩 galbi jim</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            The uni sotbap was incredible—the uni melted right into the warm rice, creating a buttery, comforting flavor without being greasy or heavy. Every bite felt balanced and delicate, highlighting the freshness of the ingredients. The galbi jjim was also excellent, with tender, slow-braised beef that had a deep, savory flavor. I especially appreciated that it wasn’t overly sweet, which many versions in New York tend to be. Even the banchan, particularly the kimchi, stood out—fresh, well-fermented, and full of flavor that complemented the main dishes perfectly. The overall vibe of Moono is grand yet refined, with a modern Korean aesthetic that feels both luxurious and welcoming.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.5/10</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card card--h420">
+      <a href="https://resy.com/cities/new-york-ny/venues/coqodaq?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/coqodaq.JPG" alt="coqodaq">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/LeeJPVC5r2qvJgmD8" target="_blank" rel="noopener">coqodaq</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍗 the bucket list</li>
+            <li>🫕 spicy tteokboki</li>
+            <li>🥬 coleslaw</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            The Bucket List set was amazing—everything from the chicken consommé to the perilla noodles and soft-serve felt thoughtful and refined. I chose the Original and Gochujang Glaze fried chicken; both were delicious, but I preferred the original for its perfect crisp and clean flavor. The tteokbokki was too sweet and felt artificial for me, though the coleslaw was great. The vibe is modern, upscale, and lively, with a grand, cathedral-like interior. From the team behind COTE, Coqodaq delivers Korean fried chicken with elegance and style.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.1/10</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
+

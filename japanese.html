@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>japanese — yws picks</title>
+
+  <style>
+    /* Page */
+    html, body { margin:0; padding:0; }
+    body {
+      background:#EADBC7;            /* background */
+      color:#AD3A1E;                 /* font */
+      font-family:"Courier New", Courier, monospace;
+    }
+    .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
+
+    /* Back arrow */
+    .back-arrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:40px; color:#AD3A1E; text-decoration:none;
+      margin-bottom:20px; transition:opacity .2s, transform .2s;
+    }
+    .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
+
+    /* Header */
+    h1{ margin:0; font-size:40px; font-weight:700; }
+    .note{ margin-top:10px; font-size:20px; opacity:.9; }
+    .intro{ margin:5px 0 40px; font-size:20px; opacity:.9; }
+
+    /* Card layout */
+    .card{
+      position:relative;
+      display:grid;
+      grid-template-columns:360px 1fr;
+      grid-template-areas:"photo content";
+      align-items:stretch;
+      gap:20px;
+      background:#55251E;
+      border-radius:17px;
+      padding:20px;
+      margin-bottom:60px;
+      overflow:hidden;
+    }
+
+    /* Photo */
+    .photo{
+      grid-area:photo;
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+
+    /* RESY image button */
+    .resy-btn{
+      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      cursor:pointer; transition:transform .2s;
+    }
+    .resy-btn:hover{ transform:scale(1.05); }
+
+    /* Content */
+    .content{
+      grid-area:content;
+      display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
+      min-height:0;
+    }
+
+    /* Title hover effect */
+    .title {
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 6px;
+      color:#F4F4F4;
+    }
+    .title a {
+      color:#F4F4F4;
+      text-decoration:none;
+      position:relative;
+      transition:opacity .2s ease;
+    }
+    .title a::after {
+      content:"📍";
+      opacity:0;
+      margin-left:6px;
+      transition:opacity .3s ease, transform .3s ease;
+      transform:translateY(-2px);
+    }
+    .title a:hover {
+      opacity:.85;
+    }
+    .title a:hover::after {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Text */
+    .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; color:#F4F4F4; }
+    .menu{ margin:4px 0 10px; padding:0; list-style:none; font-size:16px; color:#F4F4F4; }
+    .menu li{ margin:4px 0; }
+    .review{ font-size:16px; line-height:1.3; color:#F4F4F4; margin-top:2px; }
+    .rate{ margin-top:8px; font-size:16px; color:#F4F4F4; }
+
+    /* Mobile */
+    @media (max-width:700px){
+      .card{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "photo"
+          "content";
+        height:auto !important;
+      }
+      .photo{ height:240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <!-- Back -->
+    <a href="harmonic collection.html" class="back-arrow" aria-label="back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <h1>japanese</h1>
+    <p class="note">*reminder that all the ratings and suggestions are based on my taste*</p>
+    <p class="intro">
+      japanese is my favorite cuisine! as a korean, i love korean food but japanese food feels similar and comforting to me. i’m excited to show you my favorite picks in new york!
+    </p>
+
+    <!-- Card 1 -->
+    <article class="card card--h360">
+      <a href="https://resy.com/cities/new-york-ny/venues/rule-of-thirds?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/rule of thirds.jpg" alt="rule of thirds">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/6zUv3sChDB8t15q77" target="_blank" rel="noopener">rule of thirds</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥪 chicken katsu sando</li>
+            <li>🍱 gyudon</li>
+            <li>🥞 souffle pancake</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            all the dishes were comforting and delicious. the katsu was perfectly crispy yet juicy, balanced by warm bread, cabbage, and sauce. the gyudon had a subtle, soothing depth, with toppings like purple broccolini adding texture. the soufflé pancake was soft, airy, and perfectly balanced—not overly sweet—easily one of the best desserts i’ve had. rule of thirds has a warm, modern vibe that blends minimalist japanese design with brooklyn energy: airy, wood-filled, and stylish yet relaxed.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.9/10</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card card--h420">
+      <a href="https://resy.com/cities/new-york-ny/venues/yakitori-nonono?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/nonono.JPG" alt="nonono">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/yeXQbE9QjZ9hn7qP7" target="_blank" rel="noopener">nonono</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥗 salmon salad</li>
+            <li>🍣 oyako roll</li>
+            <li>🍜 cod cream udon</li>
+            <li>🍢 tsukune meatball</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            the salmon salad was incredibly fresh, with clean, buttery slices of salmon. the oyako roll had the perfect balance—rich but not heavy, allowing the ingredients to shine. the cod cream udon was rich yet light; the broth had a velvety texture without feeling oily. the tsukune meatball was tender with a flavorful glaze. every dish felt comforting yet refined—modern japanese balance and subtlety at its best. the atmosphere is lively and warm, like a sleek izakaya with a modern twist.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.4/10</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card card--h380">
+      <a href="https://resy.com/cities/new-york-ny/venues/raku-soho?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/raku1.JPG" alt="raku">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/hTZrVtGYQ4NFF3uw8" target="_blank" rel="noopener">raku</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍜 kitsune udon</li>
+            <li>🍖 karaage</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            raku is one of the most comforting spots in new york. the broth of the kitsune udon was deep yet clean—rich in umami but not heavy. the noodles were chewy, smooth, and springy with the perfect bite. the fried bean curd on top was soft and sweet, soaking up the broth beautifully. the karaage was crispy and tender, lightly seasoned to let the chicken’s natural flavor shine. everything here feels thoughtful, cozy, and effortless—true japanese comfort food.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.1/10</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

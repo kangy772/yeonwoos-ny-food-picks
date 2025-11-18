@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>american — nyc picks</title>
+
+  <style>
+    /* Page */
+    html, body { margin:0; padding:0; }
+    body {
+      background:#7b1714;            /* deep red */
+      color:#f0e7e2;                 /* warm beige */
+      font-family:"Courier New", Courier, monospace;
+    }
+    .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
+
+    /* Back arrow */
+    .back-arrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:40px; color:#f0e7e2; text-decoration:none;
+      margin-bottom:20px; transition:opacity .2s, transform .2s;
+    }
+    .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
+
+    /* Header */
+    h1{ margin:0; font-size:40px; font-weight:700; }
+    .note{ margin-top:10px; font-size:20px; opacity:.9; }
+    .intro{ margin:5px 0 40px; font-size:20px; opacity:.9; }
+
+    /* Card layout */
+    .card{
+      position:relative;
+      display:grid;
+      grid-template-columns:360px 1fr;
+      grid-template-areas:"photo content";
+      align-items:stretch;
+      gap:20px;
+      background:#2b1b19;
+      border-radius:17px;
+      padding:20px;
+      margin-bottom:60px;
+      overflow:hidden;
+    }
+
+    /* Photo */
+    .photo{
+      grid-area:photo;
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+
+    /* RESY button */
+    .resy-btn{
+      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      cursor:pointer; transition:transform .2s;
+    }
+    .resy-btn:hover{ transform:scale(1.05); }
+
+    /* Content layout */
+    .content{
+      grid-area:content;
+      display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
+      min-height:0;
+    }
+
+    /* Title + hover map pin */
+    .title {
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 6px;
+    }
+    .title a {
+      color:#f0e7e2;
+      text-decoration:none;
+      position:relative;
+      transition:opacity .2s ease;
+    }
+    .title a::after {
+      content:"📍";
+      opacity:0;
+      margin-left:6px;
+      transition:opacity .3s ease, transform .3s ease;
+      transform:translateY(-2px);
+    }
+    .title a:hover {
+      opacity:.85;
+    }
+    .title a:hover::after {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Other text */
+    .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; }
+    .menu{ margin:4px 0 10px; padding:0; list-style:none; font-size:16px; }
+    .menu li{ margin:4px 0; }
+    .review{ font-size:16px; line-height:1.3; color:#e9ddd7; margin-top:2px; }
+    .rate{ margin-top:8px; font-size:16px; }
+
+    /* Mobile */
+    @media (max-width:700px){
+      .card{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "photo"
+          "content";
+        height:auto !important;
+      }
+      .photo{ height:240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <a href="harmonic collection.html" class="back-arrow" aria-label="back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <h1>american</h1>
+    <p class="note">*reminder that all the ratings and suggestions are based on my taste*</p>
+    <p class="intro">
+      i rarely eat american food as i dont prefer oily foods but then these are my favorite american restaurants in newyork!
+    </p>
+
+    <!-- Card 1 -->
+    <article class="card card--h360">
+      <a href="https://resy.com/cities/ny/keens-steakhouse" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/keens.jpg" alt="keens porterhouse steak">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/LcHxdZGxjVysYCBi8" target="_blank" rel="noopener">keens steakhouse</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥩 porter steakhouse (for two)</li>
+            <li>🥬 creamed spinach</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            i ordered a medium rare and the porterhouse came out perfectly cooked—juicy, deeply flavorful, and with a satisfying balance of tender filet on one side and rich strip steak on the other. the creamed spinach was velvety, not overly heavy, and seasoned just enough to cut through the richness. the interior feels timeless, with dark wood, low lighting, and walls adorned with historic images.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.5/10</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card card--h420">
+      <a href="https://resy.com/cities/new-york-ny/venues/au-cheval-nyc?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/au cheval.JPG" alt="au cheval burger">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/ZL74CBz2uZSbFMXK6" target="_blank" rel="noopener">au cheval</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍔 double cheese burger (add bacon, farm egg)</li>
+            <li>🧀 mac n cheese</li>
+            <li>🥦 broccolini</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            the burger was excellent—perfectly cooked beef with smoky, crisp bacon, creamy cheese, and egg yolk that added richness. the pickle kept it fresh, and the bun was soft yet slightly crisp. broccolini was a simple but good green option, and mac n cheese was balanced—not too salty or heavy. the vibe was lively but comfortable, making it a great date spot at night.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.2/10</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card card--h380">
+      <a href="https://resy.com/cities/new-york-ny/venues/clinton-st-baking-co?date=2025-10-20&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/clinton.JPG" alt="clinton street baking company biscuit sandwich">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/oNubwFSCoLCXMFLP9" target="_blank" rel="noopener">clinton st. baking company</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥯 buttermilk biscuit sandwich</li>
+            <li>🫐 blueberry pancake</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            the biscuit sandwich was hearty and comforting, with a flaky, buttery biscuit, perfectly cooked egg, and savory layers that made it filling without being heavy. the blueberry pancakes were fluffy, light, and packed with juicy blueberries. cozy, bustling vibe blending diner energy with neighborhood charm. i opted for takeout and enjoyed my meal outside.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 8.7/10</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
+

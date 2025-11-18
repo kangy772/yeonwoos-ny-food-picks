@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>italian — yws picks</title>
+
+  <style>
+    /* Page */
+    html, body { margin:0; padding:0; }
+    body {
+      background:#4A673D;            /* background */
+      color:#F5F5F5;                 /* font */
+      font-family:"Courier New", Courier, monospace;
+    }
+    .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
+
+    /* Back arrow */
+    .back-arrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:40px; color:#F5F5F5; text-decoration:none;
+      margin-bottom:20px; transition:opacity .2s, transform .2s;
+    }
+    .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
+
+    /* Header */
+    h1{ margin:0; font-size:40px; font-weight:700; }
+    .note{ margin-top:10px; font-size:20px; opacity:.9; }
+    .intro{ margin:5px 0 40px; font-size:20px; opacity:.9; }
+
+    /* Card layout */
+    .card{
+      position:relative;
+      display:grid;
+      grid-template-columns:360px 1fr;
+      grid-template-areas:"photo content";
+      align-items:stretch;
+      gap:20px;
+      background:#EBD1B0;
+      border-radius:17px;
+      padding:20px;
+      margin-bottom:60px;
+      overflow:hidden;
+    }
+
+    /* Photo */
+    .photo{
+      grid-area:photo;
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+
+    /* RESY button */
+    .resy-btn{
+      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      cursor:pointer; transition:transform .2s;
+    }
+    .resy-btn:hover{ transform:scale(1.05); }
+
+    /* Content */
+    .content{
+      grid-area:content;
+      display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
+      min-height:0;
+    }
+
+    /* Title hover effect */
+    .title {
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 6px;
+      color:#B13F27;
+    }
+    .title a {
+      color:#B13F27;
+      text-decoration:none;
+      position:relative;
+      transition:opacity .2s ease;
+    }
+    .title a::after {
+      content:"📍";
+      opacity:0;
+      margin-left:6px;
+      transition:opacity .3s ease, transform .3s ease;
+      transform:translateY(-2px);
+    }
+    .title a:hover {
+      opacity:.85;
+    }
+    .title a:hover::after {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Text */
+    .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; color:#B13F27; }
+    .menu{ margin:4px 0 10px; padding:0; list-style:none; font-size:16px; color:#B13F27; }
+    .menu li{ margin:4px 0; }
+    .review{ font-size:16px; line-height:1.3; color:#B13F27; margin-top:2px; }
+    .rate{ margin-top:8px; font-size:16px; color:#B13F27; }
+
+    /* Mobile */
+    @media (max-width:700px){
+      .card{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "photo"
+          "content";
+        height:auto !important;
+      }
+      .photo{ height:240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <a href="harmonic collection.html" class="back-arrow" aria-label="back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <h1>italian</h1>
+    <p class="note">*reminder that all the ratings and suggestions are based on my taste*</p>
+    <p class="intro">
+      i love italian food!! my favorite pastas are vodka sauce and truffle pasta. i like pastas that have some texture in it. sometimes in newyork alot of italian restaurants are a bit salty in my opinion. I dont really like salty foods and prefer bland foods but i think these three restaurants have a good amount of flavour.
+    </p>
+
+    <!-- Card 1 -->
+    <article class="card card--h360">
+      <a href="https://resy.com/cities/new-york-ny/venues/forsythia?date=2025-10-21&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/forsythia.JPG" alt="forsythia">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/bEFrssV5op1NUbYP8" target="_blank" rel="noopener">forsythia</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍙 truffle suppli</li>
+            <li>🍝 short rib agnolotti</li>
+            <li>🍝 bucatini</li>
+            <li>🍞 focaccia</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            My favorite was the truffle suppli as it was very unique, like a fried risotto ball. I love truffle and the taste wasn't overpowering and subtle with the crispy exterior. I really liked the texture of the bucatini and the sauce was flavorful. The short rib agnolotti was soft and flavorful. The focaccia bread was soft and light which I loved. The vibe of this place is really calming and romantic in a way due to its small size.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.8/10</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card card--h420">
+      <a href="https://resy.com/cities/new-york-ny/venues/a-pasta-bar?date=2025-10-21&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/a pasta bar.JPG" alt="a pasta bar">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/ctwzs1fxTq4rBbfQA" target="_blank" rel="noopener">a pasta bar</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🍝 tagliatelle al tartufo nero</li>
+            <li>🍝 tonnarelli cacio e pepe</li>
+            <li>🥗 the gem</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            The texture of the pasta was really good with the flavourful sauce that wasn't too salty and good. A lot of places make the cacio e pepe kind of salty for my taste but this one was good. The sauce for the truffle pasta was similar just with truffle but I hope the flavour of the truffle was a bit stronger. The Gem pasta was fresh and had a good amount of sauce but was kind of hard to eat as the romaine wasn't cut. The overall vibe is really nice with an open kitchen where you can see them cook it which was nice.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.2/10</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card card--h380">
+      <a href="https://www.opentable.com/r/piccola-cucina-estiatorio-newyork" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/piccola.jpg" alt="piccola">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/92FBbt5qrqLsDRnT9" target="_blank" rel="noopener">piccola cucina estiatorio</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥔 ricotta gnocchi</li>
+            <li>🍝 ragu green tagliatelle</li>
+            <li>🐙 grilled polpo</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            The overall vibe of this place gives it a local restaurant in Italy. The staff were Italian too where they explained the menus well too. The ricotta gnocchi was my favorite, where the texture of the gnocchi was just perfect. It was chewy and soft and not overcooked with the soft taste of the ricotta sauce. The ragu tagliatelle was good too where it wasn't salty and had a deep taste to it. The grilled polpo was fine but I think it was overcooked as there wasn’t much texture and was a bit too soft.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 8.8/10</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

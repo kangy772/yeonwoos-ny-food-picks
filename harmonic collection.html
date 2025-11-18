@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yws new york food picks</title>
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #FFF8EF;
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+      color: #456E28;
+      overflow-y: hidden;
+    }
+
+    /* Typewriter title (only this animates) */
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #456E28; /* blinking cursor */
+      animation: typing 3.5s steps(26, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 23ch; } /* match full text length */
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #456E28; }
+    }
+
+    /* Subtitle and grid show immediately (no animation) */
+    p {
+      font-size: 20px;
+      margin-top: 5px;
+      margin-bottom: 25px;
+      opacity: 1;              /* ensure visible */
+    }
+
+    p a {
+      color: #456E28;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      justify-items: center;
+      align-items: start;
+      padding-bottom: 100px;
+      width: 50%;
+      margin: 0 auto;
+      opacity: 1;              /* ensure visible */
+    }
+
+    .food-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .food {
+      display: grid;
+      gap: 12px;
+      justify-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    .food img {
+      width: 130px;
+      height: auto;
+      display: block;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .food-link:hover .food img {
+      transform: scale(1.05);
+    }
+
+    .food p {
+      font-size: 16px;
+      text-transform: lowercase;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 34px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>what do u want to eat?</h1>
+  <p>i will be recommending you my top 3 restaurants in <a href="#">NEWYORK</a></p>
+
+  <section class="grid">
+
+    <a href="bagel.html" class="food-link">
+      <div class="food">
+        <img src="icons/bagel.png" alt="bagels">
+        <p>bagels</p>
+      </div>
+    </a>
+
+    <a href="japanese.html" class="food-link">
+      <div class="food">
+        <img src="icons/japanese.png" alt="japanese">
+        <p>japanese</p>
+      </div>
+    </a>
+
+    <a href="brunch.html" class="food-link">
+      <div class="food">
+        <img src="icons/brunch.png" alt="brunch">
+        <p>brunch</p>
+      </div>
+    </a>
+
+    <a href="mediterranean.html" class="food-link">
+      <div class="food">
+        <img src="icons/mediterranean.png" alt="mediterranean">
+        <p>mediterranean</p>
+      </div>
+    </a>
+
+    <a href="american.html" class="food-link">
+      <div class="food">
+        <img src="icons/burger.png" alt="american">
+        <p>american</p>
+      </div>
+    </a>
+
+    <a href="chinese.html" class="food-link">
+      <div class="food">
+        <img src="icons/chinese.png" alt="chinese">
+        <p>chinese</p>
+      </div>
+    </a>
+
+    <a href="italian.html" class="food-link">
+      <div class="food">
+        <img src="icons/italian.png" alt="italian">
+        <p>italian</p>
+      </div>
+    </a>
+
+    <a href="korean.html" class="food-link">
+      <div class="food">
+        <img src="icons/korean.png" alt="korean">
+        <p>korean</p>
+      </div>
+    </a>
+
+    <a href="thai.html" class="food-link">
+      <div class="food">
+        <img src="icons/thai.png" alt="thai">
+        <p>thai</p>
+      </div>
+    </a>
+
+  </section>
+</body>
+</html>
+
