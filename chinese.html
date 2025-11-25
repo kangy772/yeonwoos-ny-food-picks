@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>chinese — yws picks</title>
+
+  <style>
+    /* Page */
+    html, body { margin:0; padding:0; }
+    body {
+      background:#550000;            /* background */
+      color:#EDE8D0;                  /* font */
+      font-family:"Courier New", Courier, monospace;
+    }
+    .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
+
+    /* Back arrow */
+    .back-arrow{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:20px; height:40px; color:#000000; text-decoration:none;
+      margin-bottom:20px; transition:opacity .2s, transform .2s;
+    }
+    .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
+
+    /* Header */
+    h1{ margin:0; font-size:40px; font-weight:700; }
+    .note{ margin-top:10px; font-size:20px; opacity:.9; }
+    .intro{ margin:5px 0 40px; font-size:20px; opacity:.9; }
+
+    /* Card layout */
+    .card{
+      position:relative;
+      display:grid;
+      grid-template-columns:360px 1fr;
+      grid-template-areas:"photo content";
+      align-items:stretch;
+      gap:20px;
+      background:#DED1B4;
+      border-radius:17px;
+      padding:20px;
+      margin-bottom:60px;
+      overflow:hidden;
+    }
+
+    /* Photo */
+    .photo{
+      grid-area:photo;
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+
+    /* RESY button */
+    .resy-btn{
+      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      cursor:pointer; transition:transform .2s;
+    }
+    .resy-btn:hover{ transform:scale(1.05); }
+
+    /* Content */
+    .content{
+      grid-area:content;
+      display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
+      min-height:0;
+    }
+
+    /* Title hover effect */
+    .title {
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 6px;
+      color:#000000;
+    }
+    .title a {
+      color:#000000;
+      text-decoration:none;
+      position:relative;
+      transition:opacity .2s ease;
+    }
+    .title a::after {
+      content:"📍";
+      opacity:0;
+      margin-left:6px;
+      transition:opacity .3s ease, transform .3s ease;
+      transform:translateY(-2px);
+    }
+    .title a:hover {
+      opacity:.85;
+    }
+    .title a:hover::after {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Text */
+    .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; color:#000000; }
+    .menu{ margin:4px 0 10px; padding:0; list-style:none; font-size:16px; color:#000000;}
+    .menu li{ margin:4px 0; }
+    .review{ font-size:16px; line-height:1.3; color:#000000; margin-top:2px; }
+    .rate{ margin-top:8px; font-size:16px; color:#000000; }
+
+    /* Mobile */
+    @media (max-width:700px){
+      .card{
+        grid-template-columns:1fr;
+        grid-template-areas:
+          "photo"
+          "content";
+        height:auto !important;
+      }
+      .photo{ height:240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <a href="index.html" class="back-arrow" aria-label="back">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <h1>chinese</h1>
+    <p class="note">*reminder that all the ratings and suggestions are based on my taste*</p>
+    <p class="intro">
+      i rarely eat chinese food but occassionally crave it, so i havent been to that many chinese restaurants in new york. However, there are alot of good chinese restaurants in newyork!
+    </p>
+
+    <!-- Card 1 -->
+    <article class="card card--h360">
+      <a href="https://resy.com/cities/new-york-ny/venues/53?date=2025-11-23&seats=2" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/53_1.JPG" alt="53">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/VTswDUf8VeAYEBkX8" target="_blank" rel="noopener">53</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🦆 duck pie tee / 🥩 beef carpaccio / 🐓 chicken sate</li>
+            <li>🦞 lobster rice</li>
+            <li>🍲 black cod clay pot</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            All the dishes were amazing, each with a contemporary Chinese fusion twist that made them unique. My favorite was the black cod clay pot, which was comforting and packed with subtle, well-balanced flavors. The lobster rice was another standout; the lobster was tender and slightly chewy, blending beautifully with the soft, fragrant rice. The duck pie tee was incredibly flavorful, and the cilantro garnish added freshness that balanced the richness of the duck. 
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 9.9/10</div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card card--h380">
+      <a href="https://www.opentable.com/r/win-son-brooklyn" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/winson3.JPG" alt="winson">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/nzPQvtUbRzD8ByAt5" target="_blank" rel="noopener">win son</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥟 pork buns</li>
+            <li>🍲 xi fan</li>
+            <li>🥞 scallion pancake</li>
+            <li>🍑 guohua jie salad</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            My favorite dish was the pork bun with the chili vinaigrette. The filling was juicy and flavorful, the exterior perfectly crispy, and the sauce really made it unforgettable. The xi fan, a savory rice porridge with soy egg, you tiao, and braised pork, was incredibly comforting. The spices kept it from being bland, and I ended up loving it much more than I expected. The scallion pancakes were just okay; they tasted a bit floury and chewy, so not my favorite. The Juohua Jie salad was also a bit questionable — the jelly-like pieces mixed with fruit made it feel more like a bowl of dessert than a salad. It was refreshing, but I wouldn’t order it again.
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 8.8/10</div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card card--h420">
+      <a href="https://www.yelp.com/reservations/din-tai-fung-new-york-3" target="_blank" rel="noopener">
+        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      </a>
+      <div class="photo">
+        <img src="images/dintai6.JPG" alt="dintai">
+      </div>
+      <div class="content">
+        <h2 class="title">
+          <a href="https://maps.app.goo.gl/crHkJFudGSdjVovB8" target="_blank" rel="noopener">din tai fung</a>
+        </h2>
+        <div>
+          <div class="label">MENU:</div>
+          <ul class="menu">
+            <li>🥒 cucumber / 🫛 beans / 🍖 ribs</li>
+            <li>🥟 pork xiao long bao / 🥟 spicy wontons</li>
+            <li>🍚 shrimp fried rice / 🍜 sesame noodle</li>
+            <li>🍫 chocolate xiao long bao</li>
+          </ul>
+        </div>
+        <div class="review">
+          <div class="label">REVIEW:</div>
+          <p>
+            The cucumbers were super crunchy and coated in chili oil but i preferred the beans which had a crunchy texture. The ribs were one of my favorites: tender, juicy, and not overly salty. The pork xiao long bao were juicy as expected.The shrimp fried rice was really comforting, with soft rice and a subtle, clean flavor. The sesame noodles were another favorite which the texture of the noodles, and the sesame sauce was rich and flavorful without being heavy. The spicy wontons had a warm, juicy filling and spices that didn’t overpower the dish. The chocolate xiao long bao, one of their signature desserts, was fun to try but not particularly memorable for me. 
+          </p>
+        </div>
+        <div class="rate">⭐ rate: 8.7/10</div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
+
