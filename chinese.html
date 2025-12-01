@@ -18,7 +18,7 @@
     /* Back arrow */
     .back-arrow{
       display:inline-flex; align-items:center; justify-content:center;
-      width:20px; height:40px; color:#000000; text-decoration:none;
+      width:20px; height:40px; color:#EDE8D0; text-decoration:none;
       margin-bottom:20px; transition:opacity .2s, transform .2s;
     }
     .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
@@ -43,16 +43,20 @@
       overflow:hidden;
     }
 
-    /* Photo */
+    /* Photo – now square and clickable, no fade */
     .photo{
       grid-area:photo;
       width:100%;
-      height:100%;
+      aspect-ratio:1 / 1;      /* square frame */
       border-radius:10px;
       overflow:hidden;
     }
     .photo img{
-      width:100%; height:100%; object-fit:cover; display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      cursor:pointer;          /* shows it's clickable */
     }
 
     /* RESY button */
@@ -67,6 +71,7 @@
       grid-area:content;
       display:grid; grid-template-rows:auto auto 1fr auto; gap:10px;
       min-height:0;
+      color:#000000;
     }
 
     /* Title hover effect */
@@ -113,7 +118,7 @@
           "content";
         height:auto !important;
       }
-      .photo{ height:240px; }
+      .photo{ aspect-ratio:1 / 1; }
     }
   </style>
 </head>
@@ -133,13 +138,19 @@
       i rarely eat chinese food but occassionally crave it, so i havent been to that many chinese restaurants in new york. However, there are alot of good chinese restaurants in newyork!
     </p>
 
-    <!-- Card 1 -->
+    <!-- Card 1 – 53 -->
     <article class="card card--h360">
       <a href="https://resy.com/cities/new-york-ny/venues/53?date=2025-11-23&seats=2" target="_blank" rel="noopener">
         <img src="images/resy.png" alt="resy link" class="resy-btn">
       </a>
       <div class="photo">
-        <img src="images/53_1.JPG" alt="53">
+        <img
+          id="img-53"
+          src="images/53_1.JPG"
+          alt="53"
+          data-index="0"
+          onclick="nextImage('img-53', ['images/53_1.JPG','images/53_2.JPG','images/53_3.JPG'])"
+        >
       </div>
       <div class="content">
         <h2 class="title">
@@ -163,13 +174,19 @@
       </div>
     </article>
 
-    <!-- Card 2 -->
+    <!-- Card 2 – Win Son -->
     <article class="card card--h380">
       <a href="https://www.opentable.com/r/win-son-brooklyn" target="_blank" rel="noopener">
         <img src="images/resy.png" alt="resy link" class="resy-btn">
       </a>
       <div class="photo">
-        <img src="images/winson3.JPG" alt="winson">
+        <img
+          id="img-winson"
+          src="images/winson1.JPG"
+          alt="winson"
+          data-index="0"
+          onclick="nextImage('img-winson', ['images/winson1.JPG','images/winson2.JPG','images/winson3.JPG','images/winson4.JPG'])"
+        >
       </div>
       <div class="content">
         <h2 class="title">
@@ -194,13 +211,19 @@
       </div>
     </article>
 
-    <!-- Card 3 -->
+    <!-- Card 3 – Din Tai Fung -->
     <article class="card card--h420">
       <a href="https://www.yelp.com/reservations/din-tai-fung-new-york-3" target="_blank" rel="noopener">
         <img src="images/resy.png" alt="resy link" class="resy-btn">
       </a>
       <div class="photo">
-        <img src="images/dintai6.JPG" alt="dintai">
+        <img
+          id="img-dintai"
+          src="images/dintai.JPG"
+          alt="dintai"
+          data-index="0"
+          onclick="nextImage('img-dintai', ['images/dintai.JPG','images/dintai2.JPG','images/dintai3.JPG','images/dintai4.JPG','images/dintai5.JPG','images/dintai6.JPG'])"
+        >
       </div>
       <div class="content">
         <h2 class="title">
@@ -225,6 +248,18 @@
       </div>
     </article>
   </main>
+
+  <!-- Simple image click carousel JS -->
+  <script>
+    function nextImage(id, images) {
+      const img = document.getElementById(id);
+      let index = parseInt(img.getAttribute('data-index')) || 0;
+      index = (index + 1) % images.length;
+      img.src = images[index];
+      img.setAttribute('data-index', index);
+    }
+  </script>
 </body>
 </html>
+
 

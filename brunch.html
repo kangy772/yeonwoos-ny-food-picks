@@ -9,8 +9,8 @@
     /* Page */
     html, body { margin:0; padding:0; }
     body {
-      background:#EEE8C2;            /* background */
-      color:#160B04;                  /* font */
+      background:#EEE8C2;
+      color:#160B04;
       font-family:"Courier New", Courier, monospace;
     }
     .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
@@ -47,17 +47,18 @@
     .photo{
       grid-area:photo;
       width:100%;
-      height:100%;
+      aspect-ratio:1 / 1;   /* square */
       border-radius:10px;
       overflow:hidden;
     }
     .photo img{
       width:100%; height:100%; object-fit:cover; display:block;
+      cursor:pointer;
     }
 
     /* RESY button */
     .resy-btn{
-      position:absolute; right:18px; top:16px; width:50px; height:auto;
+      position:absolute; right:18px; top:16px; width:50px;
       cursor:pointer; transition:transform .2s;
     }
     .resy-btn:hover{ transform:scale(1.05); }
@@ -71,10 +72,7 @@
 
     /* Title hover effect */
     .title {
-      font-size:22px;
-      font-weight:700;
-      margin:0 0 6px;
-      color:#F4F4F4;
+      font-size:22px; font-weight:700; margin:0 0 6px; color:#F4F4F4;
     }
     .title a {
       color:#F4F4F4;
@@ -89,13 +87,8 @@
       transition:opacity .3s ease, transform .3s ease;
       transform:translateY(-2px);
     }
-    .title a:hover {
-      opacity:.85;
-    }
-    .title a:hover::after {
-      opacity:1;
-      transform:translateY(0);
-    }
+    .title a:hover { opacity:.85; }
+    .title a:hover::after { opacity:1; transform:translateY(0); }
 
     /* Text */
     .label{ font-weight:700; letter-spacing:.8px; margin-top:2px; color:#F4F4F4; }
@@ -111,15 +104,15 @@
         grid-template-areas:
           "photo"
           "content";
-        height:auto !important;
       }
-      .photo{ height:240px; }
+      .photo{ aspect-ratio:1 / 1; }
     }
   </style>
 </head>
 
 <body>
   <main class="wrap">
+
     <a href="index.html" class="back-arrow" aria-label="back">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -134,28 +127,31 @@
     </p>
 
     <!-- Card 1 -->
-    <article class="card card--h360">
+    <article class="card">
       <a href="https://resy.com/cities/new-york-ny/venues/sadelles?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+        <img src="images/resy.png" class="resy-btn">
       </a>
       <div class="photo">
         <img src="images/sadelles.JPG" alt="sadelles">
       </div>
+
       <div class="content">
         <h2 class="title">
-          <a href="https://maps.app.goo.gl/z6qpZY9r9RFYaq969" target="_blank" rel="noopener">sadelle’s new york</a>
+          <a href="https://maps.app.goo.gl/z6qpZY9r9RFYaq969" target="_blank">sadelle’s new york</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
-            <li>🥯 house salmon (with bagel, tomato, cucumber & capers)</li>
+            <li>🥯 house salmon (bagel, tomato, cucumber & capers)</li>
             <li>🥗 cobb salad / 🍞 french toast</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
-            My favorite dish was the Cobb salad; all the ingredients were fresh, and the dressing tied everything together perfectly. The portions were generous, which made the meal even more satisfying. The house salmon was incredibly fresh, and the bagel was warm, crispy on the outside, and soft on the inside. I was worried the French toast might be too sweet, but it was perfectly balanced — soft and fluffy with a light crunch on the outside.
+            My favorite dish was the Cobb salad; all the ingredients were fresh, and the dressing tied everything together perfectly. The portions were generous, which made the meal even more satisfying. The house salmon was incredibly fresh, and the bagel was warm, crispy on the outside, and soft on the inside. I was worried the French toast might be too sweet, but it was a perfect balance of soft and fluffy with a light crunch on the outside.
           </p>
         </div>
         <div class="rate">⭐ rate: 8.9/10</div>
@@ -163,17 +159,20 @@
     </article>
 
     <!-- Card 2 -->
-    <article class="card card--h380">
-      <a href="https://www.opentable.com/r/little-rubys-cafe-east-village-new-york" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+    <article class="card">
+      <a href="https://www.opentable.com/r/little-rubys-cafe-east-village-new-york" target="_blank">
+        <img src="images/resy.png" class="resy-btn">
       </a>
+
       <div class="photo">
         <img src="images/rubys.JPG" alt="rubys">
       </div>
+
       <div class="content">
         <h2 class="title">
-          <a href="https://maps.app.goo.gl/qyd1vC69KVTF8wJQ7" target="_blank" rel="noopener">little ruby’s cafe</a>
+          <a href="https://maps.app.goo.gl/qyd1vC69KVTF8wJQ7" target="_blank">little ruby’s cafe</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -182,6 +181,7 @@
             <li>🍠 sweet potato fries</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
@@ -192,36 +192,59 @@
       </div>
     </article>
 
-    <!-- Card 3 -->
-    <article class="card card--h420">
-      <a href="https://resy.com/cities/new-york-ny/venues/cafe-maud?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+    <!-- Card 3 — Café Maud with click-to-change images -->
+    <article class="card">
+      <a href="https://resy.com/cities/new-york-ny/venues/cafe-maud?date=2025-10-20&seats=2" target="_blank">
+        <img src="images/resy.png" class="resy-btn">
       </a>
+
       <div class="photo">
-        <img src="images/cafe maud.JPG" alt="cafe maud">
+        <img
+          id="img-maud"
+          src="images/cafe maud.JPG"
+          alt="cafe maud"
+          data-index="0"
+          onclick="nextImage('img-maud', ['images/cafe maud.JPG','images/cafe maud2.JPG'])"
+        >
       </div>
+
       <div class="content">
         <h2 class="title">
-          <a href="https://maps.app.goo.gl/qyd1vC69KVTF8wJQ7" target="_blank" rel="noopener">cafe maud</a>
+          <a href="https://maps.app.goo.gl/qyd1vC69KVTF8wJQ7" target="_blank">cafe maud</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
             <li>🥞 lemon ricotta pancakes / 🍕 bianca pizza</li>
-            <li>🥗 the rhymers club salad with chicken / 🥩 steak frites</li>
+            <li>🥗 rhymers club salad / 🥩 steak frites</li>
             <li>🍚 malibu bowl</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
-            This place has a similar vibe to Little Ruby’s Café — casual, lively, yet relaxed. I’ve been here for both brunch and dinner, and both experiences were great. The ricotta pancakes are soft, melt in your mouth, and perfectly balanced in sweetness. My favorite dish is the Malibu Bowl — comforting and flavorful without being overpowering. The pizza was also excellent, with fresh toppings and a soft, chewy crust. The steak was decent but not particularly memorable. Overall, I’d definitely recommend the pizza and the Malibu Bowl.
+            This place has a similar vibe to Little Ruby’s Café — casual, lively, yet relaxed. I’ve been here for both brunch and dinner, and both experiences were great. The ricotta pancakes are soft, melt in your mouth, and perfectly balanced in sweetness. My favorite dish is the Malibu Bowl. It is comforting and flavorful without being overpowering. The pizza was also excellent, with fresh toppings and a soft, chewy crust. The steak was decent but not particularly memorable. Overall, I’d definitely recommend the pizza and the Malibu Bowl.
           </p>
         </div>
         <div class="rate">⭐ rate: 8.6/10</div>
       </div>
     </article>
+
   </main>
+
+  <!-- JS for click image carousel -->
+  <script>
+    function nextImage(id, images) {
+      const img = document.getElementById(id);
+      let index = parseInt(img.getAttribute("data-index")) || 0;
+      index = (index + 1) % images.length;
+      img.src = images[index];
+      img.setAttribute("data-index", index);
+    }
+  </script>
 </body>
 </html>
+
 
