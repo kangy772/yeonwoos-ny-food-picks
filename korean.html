@@ -50,9 +50,11 @@
       height:100%;
       border-radius:10px;
       overflow:hidden;
+      cursor:pointer;
     }
     .photo img{
       width:100%; height:100%; object-fit:cover; display:block;
+      user-select:none; pointer-events:none;
     }
 
     /* RESY button */
@@ -89,9 +91,7 @@
       transition:opacity .3s ease, transform .3s ease;
       transform:translateY(-2px);
     }
-    .title a:hover {
-      opacity:.85;
-    }
+    .title a:hover { opacity:.85; }
     .title a:hover::after {
       opacity:1;
       transform:translateY(0);
@@ -108,9 +108,7 @@
     @media (max-width:700px){
       .card{
         grid-template-columns:1fr;
-        grid-template-areas:
-          "photo"
-          "content";
+        grid-template-areas:"photo" "content";
         height:auto !important;
       }
       .photo{ height:240px; }
@@ -133,18 +131,22 @@
       as a korean i love korean food! sometimes korean foods are really sweet in newyork compared to local food back in korea but its still good here in new york too! most restaurants elevate the local food in korea in a more modern way. i wil be recommending some of my favorite restaurants that arent the traditional way but still i think alot of foreigners will love!
     </p>
 
-    <!-- Card 1 -->
+    <!-- CARD 1 — NUBIANI (CAROUSEL ADDED) -->
     <article class="card card--h360">
-      <a href="https://resy.com/cities/new-york-ny/venues/nubiani?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      <a href="https://resy.com/cities/new-york-ny/venues/nubiani?date=2025-10-20&seats=2" target="_blank">
+        <img src="images/resy.png" class="resy-btn">
       </a>
-      <div class="photo">
+
+      <div class="photo"
+        data-images='["images/nubiani1.JPG","images/NUBIANI2.jpg"]'>
         <img src="images/nubiani1.JPG" alt="nubiani">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/f64e8ETvALPY81pK8" target="_blank" rel="noopener">nubiani</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -152,28 +154,33 @@
             <li>🍲 soybean paste stew</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             As a Korean, I can firmly say this is the best kbbq in New York. Every cut of meat was incredible—tender, flavorful, and melting in your mouth without being too fatty or oily. The set package includes a variety of premium meats along with an impressive selection of banchan and a perfectly cooked steamed egg that’s soft, bouncy, and melts the moment you taste it. The soybean paste stew was rich and deeply comforting, with just the right balance of saltiness. They serve a house soft-serve ice cream—light, creamy, and the perfect way to end the meal. For the quality and variety offered, Nubiani is an amazing value. The vibe is modern yet luxurious, with a clean, upscale atmosphere that still feels warm and welcoming.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 10/10</div>
       </div>
     </article>
 
-    <!-- Card 2 -->
+    <!-- CARD 2 — MOONO -->
     <article class="card card--h380">
-      <a href="https://resy.com/cities/new-york-ny/venues/moono?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+      <a href="https://resy.com/cities/new-york-ny/venues/moono?date=2025-10-20&seats=2" target="_blank">
+        <img src="images/resy.png" class="resy-btn">
       </a>
-      <div class="photo">
+
+      <div class="photo" data-images='["images/moono.jpg"]'>
         <img src="images/moono.jpg" alt="moono">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/9nwYbNRXP2DdPaGX9" target="_blank" rel="noopener">moono</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -181,46 +188,78 @@
             <li>🥩 galbi jim</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             The uni sotbap was incredible—the uni melted right into the warm rice, creating a buttery, comforting flavor without being greasy or heavy. Every bite felt balanced and delicate, highlighting the freshness of the ingredients. The galbi jjim was also excellent, with tender, slow-braised beef that had a deep, savory flavor. I especially appreciated that it wasn’t overly sweet, which many versions in New York tend to be. Even the banchan, particularly the kimchi, stood out—fresh, well-fermented, and full of flavor that complemented the main dishes perfectly. The overall vibe of Moono is grand yet refined, with a modern Korean aesthetic that feels both luxurious and welcoming.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 9.5/10</div>
       </div>
     </article>
 
-    <!-- Card 3 -->
-    <article class="card card--h420">
-      <a href="https://resy.com/cities/new-york-ny/venues/coqodaq?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
-      </a>
-      <div class="photo">
-        <img src="images/coqodaq.JPG" alt="coqodaq">
-      </div>
-      <div class="content">
-        <h2 class="title">
-          <a href="https://maps.app.goo.gl/LeeJPVC5r2qvJgmD8" target="_blank" rel="noopener">coqodaq</a>
-        </h2>
-        <div>
-          <div class="label">MENU:</div>
-          <ul class="menu">
-            <li>🍗 the bucket list</li>
-            <li>🫕 spicy tteokboki</li>
-            <li>🥬 coleslaw</li>
-          </ul>
-        </div>
-        <div class="review">
-          <div class="label">REVIEW:</div>
-          <p>
-            The Bucket List set was amazing—everything from the chicken consommé to the perilla noodles and soft-serve felt thoughtful and refined. I chose the Original and Gochujang Glaze fried chicken; both were delicious, but I preferred the original for its perfect crisp and clean flavor. The tteokbokki was too sweet and felt artificial for me, though the coleslaw was great. The vibe is modern, upscale, and lively, with a grand, cathedral-like interior. From the team behind COTE, Coqodaq delivers Korean fried chicken with elegance and style.
-          </p>
-        </div>
-        <div class="rate">⭐ rate: 9.1/10</div>
-      </div>
-    </article>
+    <!-- CARD 3 — COQODAQ -->
+   <!-- CARD 3 — COQODAQ -->
+<article class="card card--h420">
+  <a href="https://resy.com/cities/new-york-ny/venues/coqodaq?date=2025-10-20&seats=2" target="_blank">
+    <img src="images/resy.png" class="resy-btn">
+  </a>
+
+  <!-- CLICKABLE CAROUSEL -->
+  <div class="photo"
+    data-images='[
+      "images/coqodaq.jpg",
+      "images/coqodaq2.jpg",
+      "images/coqodaq.JPG"
+    ]'>
+    <img src="images/coqodaq.jpg" alt="coqodaq">
+  </div>
+
+  <div class="content">
+    <h2 class="title">
+      <a href="https://maps.app.goo.gl/LeeJPVC5r2qvJgmD8" target="_blank" rel="noopener">coqodaq</a>
+    </h2>
+
+    <div>
+      <div class="label">MENU:</div>
+      <ul class="menu">
+        <li>🍗 the bucket list</li>
+        <li>🫕 spicy tteokboki</li>
+        <li>🥬 coleslaw</li>
+      </ul>
+    </div>
+
+    <div class="review">
+      <div class="label">REVIEW:</div>
+      <p>
+        The Bucket List set was amazing—everything from the chicken consommé to the perilla noodles and soft-serve felt thoughtful and refined. I chose the Original and Gochujang Glaze fried chicken; both were delicious, but I preferred the original for its perfect crisp and clean flavor. The tteokbokki was too sweet and felt artificial for me, though the coleslaw was great. The vibe is modern, upscale, and lively, with a grand, cathedral-like interior. From the team behind COTE, Coqodaq delivers Korean fried chicken with elegance and style.
+      </p>
+    </div>
+
+    <div class="rate">⭐ rate: 9.1/10</div>
+  </div>
+</article>
+
+
   </main>
+
+  <!-- CLICK IMAGE TO SWAP -->
+  <script>
+    document.querySelectorAll(".photo").forEach(photo => {
+      const images = JSON.parse(photo.dataset.images);
+      let index = 0;
+      const img = photo.querySelector("img");
+
+      photo.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        img.src = images[index];
+      });
+    });
+  </script>
+
 </body>
 </html>
+
 

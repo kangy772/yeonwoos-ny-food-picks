@@ -9,8 +9,8 @@
     /* Page */
     html, body { margin:0; padding:0; }
     body {
-      background:#EADBC7;            /* background */
-      color:#AD3A1E;                 /* font */
+      background:#EADBC7;
+      color:#AD3A1E;
       font-family:"Courier New", Courier, monospace;
     }
     .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
@@ -50,12 +50,14 @@
       height:100%;
       border-radius:10px;
       overflow:hidden;
+      cursor:pointer;
     }
     .photo img{
       width:100%; height:100%; object-fit:cover; display:block;
+      user-select:none; pointer-events:none;
     }
 
-    /* RESY image button */
+    /* RESY button */
     .resy-btn{
       position:absolute; right:18px; top:16px; width:50px; height:auto;
       cursor:pointer; transition:transform .2s;
@@ -89,9 +91,7 @@
       transition:opacity .3s ease, transform .3s ease;
       transform:translateY(-2px);
     }
-    .title a:hover {
-      opacity:.85;
-    }
+    .title a:hover { opacity:.85; }
     .title a:hover::after {
       opacity:1;
       transform:translateY(0);
@@ -120,6 +120,7 @@
 
 <body>
   <main class="wrap">
+
     <!-- Back -->
     <a href="index.html" class="back-arrow" aria-label="back">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
@@ -134,18 +135,22 @@
       japanese is my favorite cuisine! as a korean, i love korean food but japanese food feels similar and comforting to me. i’m excited to show you my favorite picks in new york!
     </p>
 
-    <!-- Card 1 -->
+    <!-- Card 1 — RULE OF THIRDS -->
     <article class="card card--h360">
       <a href="https://resy.com/cities/new-york-ny/venues/rule-of-thirds?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+        <img src="images/resy.png" class="resy-btn">
       </a>
-      <div class="photo">
+
+      <div class="photo"
+           data-images='["images/rule of thirds.jpg","images/rule of thirds2.jpg","images/rule of thirds3.jpg"]'>
         <img src="images/rule of thirds.jpg" alt="rule of thirds">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/6zUv3sChDB8t15q77" target="_blank" rel="noopener">rule of thirds</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -154,28 +159,35 @@
             <li>🥞 souffle pancake</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             all the dishes were comforting and delicious. the katsu was perfectly crispy yet juicy, balanced by warm bread, cabbage, and sauce. the gyudon had a subtle, soothing depth, with toppings like purple broccolini adding texture. the soufflé pancake was soft, airy, and perfectly balanced—not overly sweet—easily one of the best desserts i’ve had. rule of thirds has a warm, modern vibe that blends minimalist japanese design with brooklyn energy: airy, wood-filled, and stylish yet relaxed.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 9.9/10</div>
       </div>
     </article>
 
-    <!-- Card 2 -->
+
+    <!-- Card 2 — NONONO -->
     <article class="card card--h420">
       <a href="https://resy.com/cities/new-york-ny/venues/yakitori-nonono?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+        <img src="images/resy.png" class="resy-btn">
       </a>
-      <div class="photo">
+
+      <div class="photo"
+           data-images='["images/nonono.JPG"]'>
         <img src="images/nonono.JPG" alt="nonono">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/yeXQbE9QjZ9hn7qP7" target="_blank" rel="noopener">nonono</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -185,28 +197,35 @@
             <li>🍢 tsukune meatball</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             the salmon salad was incredibly fresh, with clean, buttery slices of salmon. the oyako roll had the perfect balance—rich but not heavy, allowing the ingredients to shine. the cod cream udon was rich yet light; the broth had a velvety texture without feeling oily. the tsukune meatball was tender with a flavorful glaze. every dish felt comforting yet refined—modern japanese balance and subtlety at its best. the atmosphere is lively and warm, like a sleek izakaya with a modern twist.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 9.4/10</div>
       </div>
     </article>
 
-    <!-- Card 3 -->
+
+    <!-- Card 3 — RAKU -->
     <article class="card card--h380">
       <a href="https://resy.com/cities/new-york-ny/venues/raku-soho?date=2025-10-20&seats=2" target="_blank" rel="noopener">
-        <img src="images/resy.png" alt="resy link" class="resy-btn">
+        <img src="images/resy.png" class="resy-btn">
       </a>
-      <div class="photo">
+
+      <div class="photo"
+           data-images='["images/raku1.JPG","images/raku2.jpg"]'>
         <img src="images/raku1.JPG" alt="raku">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/hTZrVtGYQ4NFF3uw8" target="_blank" rel="noopener">raku</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -214,15 +233,34 @@
             <li>🍖 karaage</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             raku is one of the most comforting spots in new york. the broth of the kitsune udon was deep yet clean—rich in umami but not heavy. the noodles were chewy, smooth, and springy with the perfect bite. the fried bean curd on top was soft and sweet, soaking up the broth beautifully. the karaage was crispy and tender, lightly seasoned to let the chicken’s natural flavor shine. everything here feels thoughtful, cozy, and effortless—true japanese comfort food.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 9.1/10</div>
       </div>
     </article>
+
   </main>
+
+  <!-- CLICK IMAGE TO SWAP -->
+  <script>
+    document.querySelectorAll(".photo").forEach(photo => {
+      const images = JSON.parse(photo.dataset.images);
+      let index = 0;
+      const img = photo.querySelector("img");
+
+      photo.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        img.src = images[index];
+      });
+    });
+  </script>
+
 </body>
 </html>
+

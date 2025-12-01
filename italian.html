@@ -9,8 +9,8 @@
     /* Page */
     html, body { margin:0; padding:0; }
     body {
-      background:#DED1BF;            /* background */
-      color:#000000;                 /* font */
+      background:#DED1BF;
+      color:#000000;
       font-family:"Courier New", Courier, monospace;
     }
     .wrap { width:min(100% - 2rem, 1100px); margin:40px auto 80px; }
@@ -18,7 +18,7 @@
     /* Back arrow */
     .back-arrow{
       display:inline-flex; align-items:center; justify-content:center;
-      width:20px; height:40px; color:#F5F5F5; text-decoration:none;
+      width:20px; height:40px; color:#000000; text-decoration:none;
       margin-bottom:20px; transition:opacity .2s, transform .2s;
     }
     .back-arrow:hover{ opacity:.7; transform:translateX(-4px); }
@@ -50,9 +50,11 @@
       height:100%;
       border-radius:10px;
       overflow:hidden;
+      cursor:pointer;
     }
     .photo img{
       width:100%; height:100%; object-fit:cover; display:block;
+      user-select:none; pointer-events:none;
     }
 
     /* RESY button */
@@ -89,9 +91,7 @@
       transition:opacity .3s ease, transform .3s ease;
       transform:translateY(-2px);
     }
-    .title a:hover {
-      opacity:.85;
-    }
+    .title a:hover { opacity:.85; }
     .title a:hover::after {
       opacity:1;
       transform:translateY(0);
@@ -133,18 +133,23 @@
       i love italian food!! my favorite pastas are vodka sauce and truffle pasta. i like pastas that have some texture in it. sometimes in newyork alot of italian restaurants are a bit salty in my opinion. I dont really like salty foods and prefer bland foods but i think these three restaurants have a good amount of flavour.
     </p>
 
-    <!-- Card 1 -->
+    
+    <!-- Card 1 — A PASTA BAR -->
     <article class="card card--h420">
       <a href="https://resy.com/cities/new-york-ny/venues/a-pasta-bar?date=2025-10-21&seats=2" target="_blank" rel="noopener">
         <img src="images/resy.png" alt="resy link" class="resy-btn">
       </a>
-      <div class="photo">
+
+      <div class="photo"
+           data-images='["images/a pasta bar.JPG","images/a pasta bar2.jpg"]'>
         <img src="images/a pasta bar.JPG" alt="a pasta bar">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/ctwzs1fxTq4rBbfQA" target="_blank" rel="noopener">a pasta bar</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -153,29 +158,35 @@
             <li>🥗 the gem</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             The texture of the pasta was really good with the flavourful sauce that wasn't too salty and good. A lot of places make the cacio e pepe kind of salty for my taste but this one was good. The sauce for the truffle pasta was similar just with truffle but I hope the flavour of the truffle was a bit stronger. The Gem pasta was fresh and had a good amount of sauce but was kind of hard to eat as the romaine wasn't cut. The overall vibe is really nice with an open kitchen where you can see them cook it which was nice.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 9.5/10</div>
       </div>
     </article>
 
-    
-    <!-- Card 2 -->
+
+    <!-- Card 2 — FORSYTHIA -->
     <article class="card card--h360">
       <a href="https://resy.com/cities/new-york-ny/venues/forsythia?date=2025-10-21&seats=2" target="_blank" rel="noopener">
         <img src="images/resy.png" alt="resy link" class="resy-btn">
       </a>
-      <div class="photo">
+
+      <div class="photo"
+           data-images='["images/forsythia.JPG","images/forsythia2.jpg"]'>
         <img src="images/forsythia.JPG" alt="forsythia">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/bEFrssV5op1NUbYP8" target="_blank" rel="noopener">forsythia</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -184,29 +195,35 @@
             <li>🍝 bucatini</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             My favorite was the truffle suppli as it was very unique, like a fried risotto ball. I love truffle and the taste wasn't overpowering and subtle with the crispy exterior. I really liked the texture of the bucatini and the sauce was flavorful. The short rib agnolotti was soft and flavorful. The focaccia bread was soft and light which I loved. The vibe of this place is really calming and romantic in a way due to its small size.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 9.3/10</div>
       </div>
     </article>
-    
 
-    <!-- Card 3 -->
+
+    <!-- Card 3 — PICCOLA CUCINA -->
     <article class="card card--h380">
       <a href="https://www.opentable.com/r/piccola-cucina-estiatorio-newyork" target="_blank" rel="noopener">
         <img src="images/resy.png" alt="resy link" class="resy-btn">
       </a>
-      <div class="photo">
-        <img src="images/piccola.jpg" alt="piccola">
+
+      <div class="photo"
+           data-images='["images/piccola.jpg","images/piccola2.jpg","images/piccola3.jpg"]'>
+        <img src="images/piccola.jpg" alt="piccola cucina">
       </div>
+
       <div class="content">
         <h2 class="title">
           <a href="https://maps.app.goo.gl/92FBbt5qrqLsDRnT9" target="_blank" rel="noopener">piccola cucina estiatorio</a>
         </h2>
+
         <div>
           <div class="label">MENU:</div>
           <ul class="menu">
@@ -215,15 +232,34 @@
             <li>🐙 grilled polpo</li>
           </ul>
         </div>
+
         <div class="review">
           <div class="label">REVIEW:</div>
           <p>
             The overall vibe of this place gives it a local restaurant in Italy. The staff were Italian too where they explained the menus well too. The ricotta gnocchi was my favorite, where the texture of the gnocchi was just perfect. It was chewy and soft and not overcooked with the soft taste of the ricotta sauce. The ragu tagliatelle was good too where it wasn't salty and had a deep taste to it. The grilled polpo was fine but I think it was overcooked as there wasn’t much texture and was a bit too soft.
           </p>
         </div>
+
         <div class="rate">⭐ rate: 8.8/10</div>
       </div>
     </article>
+
   </main>
+
+  <!-- CLICK IMAGE TO SWAP SCRIPT -->
+  <script>
+    document.querySelectorAll(".photo").forEach(photo => {
+      const images = JSON.parse(photo.dataset.images);
+      let index = 0;
+      const img = photo.querySelector("img");
+
+      photo.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        img.src = images[index];
+      });
+    });
+  </script>
+
 </body>
 </html>
+
