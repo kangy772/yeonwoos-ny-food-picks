@@ -13,15 +13,15 @@
       text-align: center;
       color: #456E28;
       overflow-y: hidden;
-      padding-top: 60px;
+      padding-top: 30px;
     }
 
     /* Typewriter title (only this animates) */
     h1 {
       font-size: 40px;
       font-weight: 700;
-      margin-top: 50px;
-      margin-bottom: 10px;
+      margin-top: 40px;
+      margin-bottom: 5px;
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
@@ -38,6 +38,35 @@
       from, to { border-color: transparent; }
       50% { border-color: #456E28; }
     }
+
+    
+   @media (max-width: 600px) {
+
+  h1 {
+    font-size: 28px !important;
+    width: 23ch !important;
+    border-right: 2px solid #456E28;
+
+    /* OVERRIDE ALL previous animation settings */
+    animation-name: typingMobile, blinkMobile !important;
+    animation-duration: 3s, 0.7s !important;
+    animation-timing-function: steps(23, end), step-end !important;
+    animation-iteration-count: 1, infinite !important;
+    animation-fill-mode: forwards !important;
+  }
+
+  @keyframes typingMobile {
+    from { width: 0; }
+    to   { width: 23ch; }
+  }
+
+  @keyframes blinkMobile {
+    from, to { border-color: transparent; }
+    50%      { border-color: #456E28; }
+  }
+}
+
+
 
     /* Subtitle */
     p {
@@ -56,13 +85,14 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 25px;
+      gap: 55px;
       justify-items: center;
       align-items: start;
-      padding-bottom: 100px;
+      padding-bottom: 120px;
       width: 80%;
       margin: 0 auto;
       opacity: 1;
+      margin-top: 60px;
     }
 
     .food-link {
@@ -72,13 +102,14 @@
 
     .food {
       display: grid;
-      gap: 12px;
+      gap: 18px;
       justify-items: center;
       transition: transform 0.2s ease;
+
     }
 
     .food img {
-      width: 130px;
+      width: 140px;
       height: auto;
       display: block;
       transition: transform 0.2s ease;
@@ -90,7 +121,7 @@
     }
 
     .food p {
-      font-size: 18px;
+      font-size: 19px;
       text-transform: lowercase;
       margin: 0;
     }
@@ -102,7 +133,7 @@
       }
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       .grid {
         grid-template-columns: repeat(3, 1fr);
         width: 90%;
