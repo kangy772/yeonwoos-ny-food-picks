@@ -103,6 +103,21 @@
   </style>
 </head>
 
+<script>
+  document.querySelectorAll(".photo").forEach(photo => {
+    const images = JSON.parse(photo.dataset.images || "[]");
+    if (images.length < 2) return; // only make clickable if multiple images
+
+    let index = 0;
+    const img = photo.querySelector("img");
+
+    photo.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      img.src = images[index];
+    });
+  });
+</script>
+  
 <body>
   <main class="wrap">
     <!-- Back to main selection page -->
